@@ -1,4 +1,4 @@
-package io.sekiro.inbox_app.cassandra;
+package io.sekiro.inbox_app.inbox.cassandra;
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;

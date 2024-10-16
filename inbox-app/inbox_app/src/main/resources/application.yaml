@@ -15,7 +15,7 @@ spring:
       keyspace-name: main
       username: nnsufEuxeNFxNSUjLbSnPFut
       password: nP1e0x8hazmwf7-o20PG6qYZLCs.KsDsY-SfCplxFdRD,JzS9Tgva1LBBI0XTtOHwBn1O6tqRuor4FW0bS,Xj5+C74trt2kOm6eqC9CqsNyZ9rLLLlvCQYFB+y7Rj1tX
-      schema-action: recreate-drop-unused
+      schema-action: RECREATE_DROP_UNUSED
       request:
           timeout: 10s
       connection:
