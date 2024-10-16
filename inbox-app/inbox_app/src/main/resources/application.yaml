@@ -8,11 +8,33 @@ spring:
       client:
         registration:
           github:
-            client-id: myid
-            client-secret: mysecret
+            client-id: Ov23liHBgmtTWCVNG2EG
+            client-secret: 28cd00d3cd31f196ed0928d04d0c5047247a7d1
+  data:
+    cassandra:
+      keyspace-name: main
+      username: nnsufEuxeNFxNSUjLbSnPFut
+      password: nP1e0x8hazmwf7-o20PG6qYZLCs.KsDsY-SfCplxFdRD,JzS9Tgva1LBBI0XTtOHwBn1O6tqRuor4FW0bS,Xj5+C74trt2kOm6eqC9CqsNyZ9rLLLlvCQYFB+y7Rj1tX
+      schema-action: recreate-drop-unused
+      request:
+          timeout: 10s
+      connection:
+          connect-timeout: 10s
+          init-query-timeout: 10s
+
+astra.db:
+  id: 5bf5e0c6-2259-48d2-a081-011c516bd4da-1
+  region: us-east1
+  keyspace: main
+  application.token: AstraCS:nnsufEuxeNFxNSUjLbSnPFut:08d3f9a54af0d6bf632e515a485bd694acfacb12ca38e3b6f706cda5242501b0
+
+datastax.astra:
+  secure-connect-bundle: secure-connect.zip
+
 
 logging:
   level:
     org:
       springframework:
         security: TRACE
+
