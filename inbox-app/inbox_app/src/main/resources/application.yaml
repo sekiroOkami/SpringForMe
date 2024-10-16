@@ -1,0 +1,18 @@
+spring:
+  main:
+    banner-mode: off
+
+# github login
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: myid
+            client-secret: mysecret
+
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE
