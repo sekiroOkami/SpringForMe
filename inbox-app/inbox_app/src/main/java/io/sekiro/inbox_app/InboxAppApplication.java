@@ -8,4 +8,5 @@ public class InboxAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(InboxAppApplication.class, args);
 	}
+
 }

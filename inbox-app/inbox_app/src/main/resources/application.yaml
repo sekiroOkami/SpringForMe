@@ -10,31 +10,26 @@ spring:
           github:
             client-id: Ov23liHBgmtTWCVNG2EG
             client-secret: 28cd00d3cd31f196ed0928d04d0c5047247a7d1
-  data:
-    cassandra:
-      keyspace-name: main
-      username: nnsufEuxeNFxNSUjLbSnPFut
-      password: nP1e0x8hazmwf7-o20PG6qYZLCs.KsDsY-SfCplxFdRD,JzS9Tgva1LBBI0XTtOHwBn1O6tqRuor4FW0bS,Xj5+C74trt2kOm6eqC9CqsNyZ9rLLLlvCQYFB+y7Rj1tX
-      schema-action: RECREATE_DROP_UNUSED
-      request:
-          timeout: 10s
-      connection:
-          connect-timeout: 10s
-          init-query-timeout: 10s
+  cassandra:
+    keyspace-name: main  # Your Astra DB keyspace name
+    username: USoWWhAZkfZhhxMEhoDNtwkO # Client ID from your Astra DB
+    password: 8PskEA1ZKjdDheNOnmlywhAQMBB+YzUvMaZk4YUadwpIiUfrZmQO5s+.vIvMwM,XZFEWD5-QbSK_f+Ul_KgzsItxnJt,jjgO9_DIfFYXn.MUiwt31Y.3d.+ak-cnDM2P  # Application token from your Astra DB
+    schema-action: CREATE_IF_NOT_EXISTS
+    request:
+      timeout: 10s
+    connection:
+      connect-timeout: 10s
+      init-query-timeout: 10s
 
-astra.db:
-  id: 5bf5e0c6-2259-48d2-a081-011c516bd4da-1
-  region: us-east1
-  keyspace: main
-  application.token: AstraCS:nnsufEuxeNFxNSUjLbSnPFut:08d3f9a54af0d6bf632e515a485bd694acfacb12ca38e3b6f706cda5242501b0
 
 datastax.astra:
-  secure-connect-bundle: secure-connect.zip
+  secure-connect-bundle: classpath:secure-connect-astradb.zip
 
 
 logging:
   level:
-    org:
-      springframework:
-        security: TRACE
+    org.springframework.data.cassandra: TRACE
+    com.datastax.driver.core: TRACE
+    com.datastax.oss.driver.api.core: TRACE
+
 
