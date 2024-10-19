@@ -9,18 +9,20 @@ spring:
         registration:
           github:
             client-id: Ov23liHBgmtTWCVNG2EG
-            client-secret: 28cd00d3cd31f196ed0928d04d0c5047247a7d1
+            client-secret: 46e57c313d13551cfa002e944085e0055c9d2d5b
   cassandra:
     keyspace-name: main  # Your Astra DB keyspace name
     username: USoWWhAZkfZhhxMEhoDNtwkO # Client ID from your Astra DB
     password: 8PskEA1ZKjdDheNOnmlywhAQMBB+YzUvMaZk4YUadwpIiUfrZmQO5s+.vIvMwM,XZFEWD5-QbSK_f+Ul_KgzsItxnJt,jjgO9_DIfFYXn.MUiwt31Y.3d.+ak-cnDM2P  # Application token from your Astra DB
-    schema-action: CREATE_IF_NOT_EXISTS
+    schema-action: NONE
     request:
       timeout: 10s
     connection:
       connect-timeout: 10s
       init-query-timeout: 10s
-
+  devtools:
+    livereload:
+      enabled: true
 
 datastax.astra:
   secure-connect-bundle: classpath:secure-connect-astradb.zip
