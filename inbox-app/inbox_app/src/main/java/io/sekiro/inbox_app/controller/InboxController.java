@@ -2,6 +2,7 @@ package io.sekiro.inbox_app.controller;
 
 import io.sekiro.inbox_app.inbox.folder.Folder;
 import io.sekiro.inbox_app.inbox.folder.FolderRepository;
+import io.sekiro.inbox_app.inbox.folder.FolderService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
@@ -17,9 +18,11 @@ import java.util.List;
 public class InboxController {
 
     private final FolderRepository folderRepository;
+    private final FolderService folderService;
 
-    public InboxController(FolderRepository folderRepository) {
+    public InboxController(FolderRepository folderRepository, FolderService folderService) {
         this.folderRepository = folderRepository;
+        this.folderService = folderService;
     }
 
     @GetMapping("/folders")
@@ -35,6 +38,8 @@ public class InboxController {
             List<Folder> userFolders = folderRepository.findAllById(userId);
             userFolders.stream().map(folder -> folder.getLabel()).forEach(System.out::println);
             model.addAttribute("userFolders", userFolders );
+            List<Folder> defaultFolders = folderService.fetchDefaultFolders(userId);
+            model.addAttribute("defaultFolders", defaultFolders );
             return "inbox-page";
         }
     }

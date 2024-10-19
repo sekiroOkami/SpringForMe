@@ -1,8 +1,6 @@
 package io.sekiro.inbox_app.inbox.folder;
 
 import org.springframework.data.cassandra.repository.CassandraRepository;
-import org.springframework.data.cassandra.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
