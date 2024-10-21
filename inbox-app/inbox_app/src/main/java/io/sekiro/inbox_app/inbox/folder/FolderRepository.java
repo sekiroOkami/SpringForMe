@@ -11,5 +11,5 @@ public interface FolderRepository extends CassandraRepository<Folder, String> {/
 //    @Query("""
 //            SELECT * FROM folders_by_user WHERE id= :id
 //            """) @Param("id")
-    List<Folder> findAllById( String userId);
+    List<Folder> findAllById(String userId);
 }

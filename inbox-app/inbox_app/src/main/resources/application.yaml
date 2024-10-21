@@ -14,7 +14,7 @@ spring:
     keyspace-name: main  # Your Astra DB keyspace name
     username: USoWWhAZkfZhhxMEhoDNtwkO # Client ID from your Astra DB
     password: 8PskEA1ZKjdDheNOnmlywhAQMBB+YzUvMaZk4YUadwpIiUfrZmQO5s+.vIvMwM,XZFEWD5-QbSK_f+Ul_KgzsItxnJt,jjgO9_DIfFYXn.MUiwt31Y.3d.+ak-cnDM2P  # Application token from your Astra DB
-    schema-action: NONE
+    schema-action: CREATE_IF_NOT_EXISTS
     request:
       timeout: 10s
     connection:
