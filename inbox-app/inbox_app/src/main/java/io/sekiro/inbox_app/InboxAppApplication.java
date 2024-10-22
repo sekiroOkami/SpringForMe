@@ -1,6 +1,8 @@
 package io.sekiro.inbox_app;
 
 import com.datastax.oss.driver.api.core.uuid.Uuids;
+import io.sekiro.inbox_app.email.Email;
+import io.sekiro.inbox_app.email.EmailRepository;
 import io.sekiro.inbox_app.emaillist.EmailListItem;
 import io.sekiro.inbox_app.emaillist.EmailListItemKey;
 import io.sekiro.inbox_app.emaillist.EmailListItemRepository;
@@ -20,9 +22,12 @@ public class InboxAppApplication {
 
 	private final EmailListItemRepository emailListItemRepository;
 
-	public InboxAppApplication(FolderRepository folderRepository, EmailListItemRepository emailListItemRepository) {
+	private final EmailRepository emailRepository;
+
+	public InboxAppApplication(FolderRepository folderRepository, EmailListItemRepository emailListItemRepository, EmailRepository emailRepository) {
 		this.folderRepository = folderRepository;
 		this.emailListItemRepository = emailListItemRepository;
+		this.emailRepository = emailRepository;
 	}
 
 	public static void main(String[] args) {
@@ -44,8 +49,17 @@ public class InboxAppApplication {
 
 					EmailListItem item = new EmailListItem();
 					item.setKey(key);
-					item.setTo(Arrays.asList("sekiroOkami"));
+					item.setTo(Arrays.asList("sekiroOkami","Marika", "Radagon"));
 					item.setSubject("Subject " + i);
+
+					Email email = new Email();
+					email.setId(key.getTimeUUID());
+					email.setFrom("sekiroOkami");
+					email.setSubject(item.getSubject());
+					email.setBody("Body " + i);
+					email.setTo(item.getTo());
+					emailRepository.save(email);
+
 					return item;
 				})
 				.forEach(emailListItemRepository::save);

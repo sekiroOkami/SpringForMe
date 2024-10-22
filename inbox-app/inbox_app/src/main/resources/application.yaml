@@ -14,7 +14,7 @@ spring:
     keyspace-name: main  # Your Astra DB keyspace name
     username: USoWWhAZkfZhhxMEhoDNtwkO # Client ID from your Astra DB
     password: 8PskEA1ZKjdDheNOnmlywhAQMBB+YzUvMaZk4YUadwpIiUfrZmQO5s+.vIvMwM,XZFEWD5-QbSK_f+Ul_KgzsItxnJt,jjgO9_DIfFYXn.MUiwt31Y.3d.+ak-cnDM2P  # Application token from your Astra DB
-    schema-action: CREATE_IF_NOT_EXISTS
+    schema-action: RECREATE
     request:
       timeout: 10s
     connection:
@@ -31,7 +31,7 @@ datastax.astra:
 logging:
   level:
     org.springframework.data.cassandra: TRACE
-    com.datastax.driver.core: TRACE
-    com.datastax.oss.driver.api.core: TRACE
+#    com.datastax.driver.core: TRACE
+#    com.datastax.oss.driver.api.core: TRACE
 
 
