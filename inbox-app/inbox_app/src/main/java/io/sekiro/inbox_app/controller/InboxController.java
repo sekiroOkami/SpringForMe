@@ -45,6 +45,8 @@ public class InboxController {
         if (principal == null || !StringUtils.hasText(principal.getAttribute("login"))) {
             return "index";
         }
+
+        // Fetch folder
         String userId = principal.getAttribute("login");
         List<Folder> userFolders = folderRepository.findAllById(userId);
         userFolders.stream().map(f -> f.getLabel()).forEach(System.out::println);
@@ -54,7 +56,7 @@ public class InboxController {
 
         // Fetch message
         if (!StringUtils.hasText(folder)) {
-            folder = "inbox";
+            folder = "Inbox";
         }
         List<EmailListItem> emailList = emailListItemRepository.findAllByKey_IdAndKey_Label(userId, folder);
         PrettyTime prettyTime = new PrettyTime();

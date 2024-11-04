@@ -30,7 +30,7 @@ datastax.astra:
 
 logging:
   level:
-    org.springframework.data.cassandra: TRACE
+    org.springframework.data.cassandra: DEBUG
 #    com.datastax.driver.core: TRACE
 #    com.datastax.oss.driver.api.core: TRACE
 

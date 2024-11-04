@@ -49,7 +49,7 @@ public class InboxAppApplication {
 
 					EmailListItem item = new EmailListItem();
 					item.setKey(key);
-					item.setTo(Arrays.asList("sekiroOkami","Marika", "Radagon"));
+					item.setTo(Arrays.asList("sekiroOkami", "Marika", "Radahn"));
 					item.setSubject("Subject " + i);
 
 					Email email = new Email();
